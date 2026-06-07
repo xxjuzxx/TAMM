@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 DAY="${1:-Friday-02-03-2018}"
-PCAP_ROOT="${IDS2018_ORGANIZED_ROOT:-${TAMM_DATA_ROOT:-./data}/CSE-CIC-IDS2018_organized}/extracted_pcaps"
+PCAP_ROOT="${IDS2018_ORGANIZED_ROOT:-data/raw/CSE-CIC-IDS2018_organized}/extracted_pcaps"
 PCAP_INPUT="$PCAP_ROOT/$DAY/pcap"
 OUT_BASE="$ROOT/outputs/ids2018_schedule_full/$DAY"
 INTERIM_BASE="$ROOT/data/interim/flows/ids2018/$DAY"

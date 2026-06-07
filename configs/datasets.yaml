@@ -1,10 +1,10 @@
 datasets:
   cicids2017_raw:
     role: primary
-    pcap_dir: ${TAMM_DATA_ROOT}/CIC-IDS2017/pcaps
-    corrected_csv_dir: ${TAMM_DATA_ROOT}/CICIDS2017_improved
+    pcap_dir: data/raw/CIC-IDS2017/pcaps
+    corrected_csv_dir: data/raw/CIC-IDS2017_corrected/CICIDS2017_improved
     source_policy: use_raw_pcap_plus_corrected_csv_only
-    excluded_convenience_cache: ${TAMM_DATA_ROOT}/ready/ids2017
+    excluded_convenience_cache: data/raw/ready/ids2017
     notes:
       - The per-class ready/ids2017 directory is intentionally excluded from the main pipeline.
       - Raw IP addresses, absolute timestamps, and complete five-tuples may be used for joining, deduplication, splitting, grouping, and audit metadata only.
@@ -13,10 +13,11 @@ datasets:
     role: reproducible_existing_results
     flow_jsonl: outputs/processed/ccfa/cicids2017_interim_labeled_flows.jsonl
     zeek_aligned_flow_jsonl: outputs/processed/ccfa/cicids2017_zeek_aligned_labeled_flows.jsonl
-    unknown_split_dir: outputs/experiments/unknown
-    category_token_dir: outputs/experiments/unknown/tokens_category
+    unknown_split_dir: paper_icdm_applied_2026/experiments/unknown
+    category_token_dir: paper_icdm_applied_2026/experiments/unknown/tokens_category
     primitive_category_results: results/primitive_categories
   external_diagnostics:
     role: domain_shift_diagnostic_only
     notes:
       - IDS2018 and UNSW tabular transfer artifacts are diagnostics, not evidence that FlowPrim behavior primitives generalize across datasets.
+

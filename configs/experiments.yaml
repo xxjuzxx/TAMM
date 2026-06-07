@@ -23,5 +23,6 @@ feature_sets:
 pipeline:
   primary_data_source: cicids2017_raw
   excluded_data_sources:
-    - ${TAMM_DATA_ROOT}/ready/ids2017
+    - data/raw/ready/ids2017
   full_pcap_rerun_is_heavyweight: true
+

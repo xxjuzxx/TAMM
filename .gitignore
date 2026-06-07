@@ -1,51 +1,46 @@
-/data/
-outputs/
-logs/
-results/
-figures/
-tables/
-reports/
-paper/
-paper_icdm_applied_2026/
-checkpoints/
-third_party/
-
 __pycache__/
+*.py[cod]
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-.vscode/
-.idea/
-.claude/
+.ipynb_checkpoints/
 
-*.pyc
-*.pyo
-*.pyd
-*.so
-*.log
-*.tmp
-*.cache
+# Local environments
+.venv/
+venv/
+env/
+*.egg-info/
 
+# Raw datasets and generated artifacts
+data/raw/
+data/interim/
+data/processed/
+outputs/
+results/
+logs/
+reports/
+splits/
+paper_icdm_applied_2026/
+artifacts/
+
+# Large or generated ML artifacts
 *.pcap
 *.pcapng
-*.csv
-*.tsv
-*.jsonl
-*.parquet
-*.feather
-*.npy
-*.npz
-*.pkl
-*.pickle
 *.pt
 *.pth
 *.ckpt
-*.onnx
+*.npy
+*.npz
+*.parquet
+*.pkl
+*.pickle
 
+# Paper build products
 *.aux
 *.bbl
 *.blg
 *.fdb_latexmk
 *.fls
+*.log
 *.out
 *.synctex.gz
