@@ -1,0 +1,64 @@
+profiles:
+  broad_ids_default:
+    description: Broad IDS default. No final service guard; use fixed threshold 0.16.
+    checkpoint: outputs/results/classifier_behavior_fullmix5_pad025_alllabels_aug/best_model.pt
+    tokens: outputs/tokens/cicids2017_tokens_2k_behavior.pt
+    metadata_tokens: null
+    split: temporal_stratified
+    threshold: 0.16
+    stateful_service:
+      enabled: false
+    alert_guard:
+      enabled: false
+    validation:
+      primary_summary: outputs/results/online_replay_seed42_fixed016_all_broad_default/online_replay_summary.json
+      panel_summary: outputs/results/online_replay_panel_seed42_fixed016_broad_default/online_replay_panel_summary.json
+      notes: Use broad all-scope result for deployment-level label coverage; model-only panel result is perturbation stress context.
+
+  low_rate_tcp80_diagnostic:
+    description: Diagnostic side-channel for low-rate TCP/80 short-flow density. Not a broad final-alert guard.
+    checkpoint: outputs/results/classifier_behavior_fullmix5_pad025_alllabels_aug/best_model.pt
+    tokens: outputs/tokens/cicids2017_tokens_2k_behavior.pt
+    metadata_tokens: outputs/tokens/cicids2017_tokens_2k_behavior_svcctx.pt
+    split: temporal_stratified
+    threshold: 0.16
+    stateful_service:
+      enabled: true
+      window_seconds: 2.0
+      min_count: 40
+      max_packets: 4
+      min_short_ratio: 0.75
+      min_model_score: 0.01
+      allowed_protocols: [TCP]
+      allowed_ports: ["80"]
+    alert_guard:
+      enabled: false
+    validation:
+      primary_summary: outputs/results/online_replay_panel_seed42_fixed016_stateful_tcp80_s001/online_replay_panel_summary.json
+      notes: Recovers low_rate_c2_070 misses without adding stateful-only DNS false positives; still inherits model-only packet_insert FPR.
+
+  web_tcp80_scoped:
+    description: Scoped Web-service protection mode. Final alerts are restricted to TCP/80; invalid for broad IDS.
+    checkpoint: outputs/results/classifier_behavior_fullmix5_pad025_alllabels_aug/best_model.pt
+    tokens: outputs/tokens/cicids2017_tokens_2k_behavior.pt
+    metadata_tokens: outputs/tokens/cicids2017_tokens_2k_behavior_svcctx.pt
+    split: temporal_stratified
+    threshold: 0.16
+    stateful_service:
+      enabled: true
+      window_seconds: 2.0
+      min_count: 40
+      max_packets: 4
+      min_short_ratio: 0.75
+      min_model_score: 0.01
+      allowed_protocols: [TCP]
+      allowed_ports: ["80"]
+    alert_guard:
+      enabled: true
+      allowed_protocols: [TCP]
+      allowed_ports: ["80"]
+    validation:
+      primary_summary: outputs/results/online_replay_panel_seed42_fixed016_stateful_tcp80_alert_tcp80_s001/online_replay_panel_summary.json
+      all_scope_summary: outputs/results/online_replay_seed42_fixed016_all_stateful_tcp80_alert_tcp80/online_replay_summary.json
+      audit: outputs/results/online_replay_seed42_fixed016_all_stateful_tcp80_alert_tcp80/alert_guard_audit.json
+      notes: Removes observed panel false positives but blocks non-Web true positives in all-scope replay.

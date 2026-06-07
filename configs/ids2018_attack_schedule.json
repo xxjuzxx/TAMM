@@ -1,0 +1,581 @@
+{
+  "dataset": "CSE-CIC-IDS2018",
+  "duplicate_rows_collapsed": 1,
+  "label_alignment_use_only": true,
+  "label_protocol": "schedule_ip_time_window",
+  "offset_basis": "Matches the existing Tuesday exact five-tuple IDS2018 CSV-to-Zeek alignment audit.",
+  "schedule_to_zeek_offset_seconds": 14400,
+  "schema_version": "flowprim_ids2018_attack_schedule_v1",
+  "source_table": "UNB CSE-CIC-IDS2018 Table 2: List of daily attacks, Machine IPs, Start and finish time of attack(s)",
+  "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+  "token_safety": {
+    "absolute_time_used_as_token": false,
+    "five_tuple_used_as_token": false,
+    "protocol_service_used_as_memory_key": false,
+    "raw_ip_used_as_token": false
+  },
+  "windows": [
+    {
+      "attack_family": "BruteForce",
+      "attack_name": "FTP-BruteForce",
+      "attacker": "172.31.70.4 (Valid IP:18.221.219.4)",
+      "attacker_ips": [
+        "172.31.70.4",
+        "18.221.219.4"
+      ],
+      "confidence": "official_schedule",
+      "date": "Wed-14-02-2018",
+      "day_dir": "Wednesday-14-02-2018",
+      "finish_time": "12:09",
+      "iso_date": "2018-02-14",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:32",
+      "victim": "172.31.69.25 (Valid IP:18.217.21.148)",
+      "victim_ips": [
+        "172.31.69.25",
+        "18.217.21.148"
+      ],
+      "window_id": "ids2018_2018-02-14_1032_01_ftp_bruteforce"
+    },
+    {
+      "attack_family": "BruteForce",
+      "attack_name": "SSH-Bruteforce",
+      "attacker": "172.31.70.6 (Valid IP:13.58.98.64)",
+      "attacker_ips": [
+        "13.58.98.64",
+        "172.31.70.6"
+      ],
+      "confidence": "official_schedule",
+      "date": "Wed-14-02-2018",
+      "day_dir": "Wednesday-14-02-2018",
+      "finish_time": "15:31",
+      "iso_date": "2018-02-14",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "14:01",
+      "victim": "18.217.21.148- 172.31.69.25",
+      "victim_ips": [
+        "172.31.69.25",
+        "18.217.21.148"
+      ],
+      "window_id": "ids2018_2018-02-14_1401_02_ssh_bruteforce"
+    },
+    {
+      "attack_family": "DoS",
+      "attack_name": "DoS-GoldenEye",
+      "attacker": "172.31.70.46 (Valid IP:18.219.211.138)",
+      "attacker_ips": [
+        "172.31.70.46",
+        "18.219.211.138"
+      ],
+      "confidence": "official_schedule",
+      "date": "Thurs-15-02-2018",
+      "day_dir": "Thursday-15-02-2018",
+      "finish_time": "10:09",
+      "iso_date": "2018-02-15",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "9:26",
+      "victim": "18.217.21.148- 172.31.69.25",
+      "victim_ips": [
+        "172.31.69.25",
+        "18.217.21.148"
+      ],
+      "window_id": "ids2018_2018-02-15_926_03_dos_goldeneye"
+    },
+    {
+      "attack_family": "DoS",
+      "attack_name": "DoS-Slowloris",
+      "attacker": "172.31.70.8 (Vazlid IP:18.217.165.70)",
+      "attacker_ips": [
+        "172.31.70.8",
+        "18.217.165.70"
+      ],
+      "confidence": "official_schedule",
+      "date": "Thurs-15-02-2018",
+      "day_dir": "Thursday-15-02-2018",
+      "finish_time": "11:40",
+      "iso_date": "2018-02-15",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:59",
+      "victim": "18.217.21.148- 172.31.69.25",
+      "victim_ips": [
+        "172.31.69.25",
+        "18.217.21.148"
+      ],
+      "window_id": "ids2018_2018-02-15_1059_04_dos_slowloris"
+    },
+    {
+      "attack_family": "DoS",
+      "attack_name": "DoS-SlowHTTPTest",
+      "attacker": "172.31.70.23 (Valid IP: 13.59.126.31)",
+      "attacker_ips": [
+        "13.59.126.31",
+        "172.31.70.23"
+      ],
+      "confidence": "official_schedule",
+      "date": "Fri-16-02-2018",
+      "day_dir": "Friday-16-02-2018",
+      "finish_time": "11:08",
+      "iso_date": "2018-02-16",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:12",
+      "victim": "18.217.21.148- 172.31.69.25",
+      "victim_ips": [
+        "172.31.69.25",
+        "18.217.21.148"
+      ],
+      "window_id": "ids2018_2018-02-16_1012_05_dos_slowhttptest"
+    },
+    {
+      "attack_family": "DoS",
+      "attack_name": "DoS-Hulk",
+      "attacker": "172.31.70.16 (Valid IP:18.219.193.20)",
+      "attacker_ips": [
+        "172.31.70.16",
+        "18.219.193.20"
+      ],
+      "confidence": "official_schedule",
+      "date": "Fri-16-02-2018",
+      "day_dir": "Friday-16-02-2018",
+      "finish_time": "14:19",
+      "iso_date": "2018-02-16",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "13:45",
+      "victim": "18.217.21.148- 172.31.69.25",
+      "victim_ips": [
+        "172.31.69.25",
+        "18.217.21.148"
+      ],
+      "window_id": "ids2018_2018-02-16_1345_06_dos_hulk"
+    },
+    {
+      "attack_family": "DDoS",
+      "attack_name": "DDoS attacks-LOIC-HTTP",
+      "attacker": "18.218.115.60 18.219.9.1 18.219.32.43 18.218.55.126 52.14.136.135 18.219.5.43 18.216.200.189 18.218.229.235 18.218.11.51 18.216.24.42",
+      "attacker_ips": [
+        "18.216.200.189",
+        "18.216.24.42",
+        "18.218.11.51",
+        "18.218.115.60",
+        "18.218.229.235",
+        "18.218.55.126",
+        "18.219.32.43",
+        "18.219.5.43",
+        "18.219.9.1",
+        "52.14.136.135"
+      ],
+      "confidence": "official_schedule",
+      "date": "Tues-20-02-2018",
+      "day_dir": "Tuesday-20-02-2018",
+      "finish_time": "11:17",
+      "iso_date": "2018-02-20",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:12",
+      "victim": "18.217.21.148- 172.31.69.25",
+      "victim_ips": [
+        "172.31.69.25",
+        "18.217.21.148"
+      ],
+      "window_id": "ids2018_2018-02-20_1012_07_ddos_attacks_loic_http"
+    },
+    {
+      "attack_family": "DDoS",
+      "attack_name": "DDoS-LOIC-UDP",
+      "attacker": "18.218.115.60 18.219.9.1 18.219.32.43 18.218.55.126 52.14.136.135 18.219.5.43 18.216.200.189 18.218.229.235 18.218.11.51 18.216.24.42",
+      "attacker_ips": [
+        "18.216.200.189",
+        "18.216.24.42",
+        "18.218.11.51",
+        "18.218.115.60",
+        "18.218.229.235",
+        "18.218.55.126",
+        "18.219.32.43",
+        "18.219.5.43",
+        "18.219.9.1",
+        "52.14.136.135"
+      ],
+      "confidence": "official_schedule",
+      "date": "Tues-20-02-2018",
+      "day_dir": "Tuesday-20-02-2018",
+      "finish_time": "13:32",
+      "iso_date": "2018-02-20",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "13:13",
+      "victim": "18.217.21.148- 172.31.69.25",
+      "victim_ips": [
+        "172.31.69.25",
+        "18.217.21.148"
+      ],
+      "window_id": "ids2018_2018-02-20_1313_08_ddos_loic_udp"
+    },
+    {
+      "attack_family": "DDoS",
+      "attack_name": "DDOS-LOIC-UDP",
+      "attacker": "18.218.115.60 18.219.9.1 18.219.32.43 18.218.55.126 52.14.136.135 18.219.5.43 18.216.200.189 18.218.229.235 18.218.11.51 18.216.24.42",
+      "attacker_ips": [
+        "18.216.200.189",
+        "18.216.24.42",
+        "18.218.11.51",
+        "18.218.115.60",
+        "18.218.229.235",
+        "18.218.55.126",
+        "18.219.32.43",
+        "18.219.5.43",
+        "18.219.9.1",
+        "52.14.136.135"
+      ],
+      "confidence": "official_schedule",
+      "date": "Wed-21-02-2018",
+      "day_dir": "Wednesday-21-02-2018",
+      "finish_time": "10:43",
+      "iso_date": "2018-02-21",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:09",
+      "victim": "18.218.83.150- 172.31.69.28",
+      "victim_ips": [
+        "172.31.69.28",
+        "18.218.83.150"
+      ],
+      "window_id": "ids2018_2018-02-21_1009_09_ddos_loic_udp"
+    },
+    {
+      "attack_family": "DDoS",
+      "attack_name": "DDOS-HOIC",
+      "attacker": "18.218.115.60 18.219.9.1 18.219.32.43 18.218.55.126 52.14.136.135 18.219.5.43 18.216.200.189 18.218.229.235 18.218.11.51 18.216.24.42",
+      "attacker_ips": [
+        "18.216.200.189",
+        "18.216.24.42",
+        "18.218.11.51",
+        "18.218.115.60",
+        "18.218.229.235",
+        "18.218.55.126",
+        "18.219.32.43",
+        "18.219.5.43",
+        "18.219.9.1",
+        "52.14.136.135"
+      ],
+      "confidence": "official_schedule",
+      "date": "Wed-21-02-2018",
+      "day_dir": "Wednesday-21-02-2018",
+      "finish_time": "15:05",
+      "iso_date": "2018-02-21",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "14:05",
+      "victim": "18.218.83.150- 172.31.69.28",
+      "victim_ips": [
+        "172.31.69.28",
+        "18.218.83.150"
+      ],
+      "window_id": "ids2018_2018-02-21_1405_10_ddos_hoic"
+    },
+    {
+      "attack_family": "WebAttack",
+      "attack_name": "Brute Force -Web",
+      "attacker": "18.218.115.60",
+      "attacker_ips": [
+        "18.218.115.60"
+      ],
+      "confidence": "official_schedule",
+      "date": "Thurs-22-02-2018",
+      "day_dir": "Thursday-22-02-2018",
+      "finish_time": "11:24",
+      "iso_date": "2018-02-22",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:17",
+      "victim": "18.218.83.150- 172.31.69.28",
+      "victim_ips": [
+        "172.31.69.28",
+        "18.218.83.150"
+      ],
+      "window_id": "ids2018_2018-02-22_1017_11_brute_force_web"
+    },
+    {
+      "attack_family": "WebAttack",
+      "attack_name": "Brute Force -XSS",
+      "attacker": "18.218.115.60",
+      "attacker_ips": [
+        "18.218.115.60"
+      ],
+      "confidence": "official_schedule",
+      "date": "Thurs-22-02-2018",
+      "day_dir": "Thursday-22-02-2018",
+      "finish_time": "14:29",
+      "iso_date": "2018-02-22",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "13:50",
+      "victim": "18.218.83.150- 172.31.69.28",
+      "victim_ips": [
+        "172.31.69.28",
+        "18.218.83.150"
+      ],
+      "window_id": "ids2018_2018-02-22_1350_12_brute_force_xss"
+    },
+    {
+      "attack_family": "WebAttack",
+      "attack_name": "SQL Injection",
+      "attacker": "18.218.115.60",
+      "attacker_ips": [
+        "18.218.115.60"
+      ],
+      "confidence": "official_schedule",
+      "date": "Thurs-22-02-2018",
+      "day_dir": "Thursday-22-02-2018",
+      "finish_time": "16:29",
+      "iso_date": "2018-02-22",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "16:15",
+      "victim": "18.218.83.150- 172.31.69.28",
+      "victim_ips": [
+        "172.31.69.28",
+        "18.218.83.150"
+      ],
+      "window_id": "ids2018_2018-02-22_1615_13_sql_injection"
+    },
+    {
+      "attack_family": "WebAttack",
+      "attack_name": "Brute Force -Web",
+      "attacker": "18.218.115.60",
+      "attacker_ips": [
+        "18.218.115.60"
+      ],
+      "confidence": "official_schedule",
+      "date": "Fri-23-02-2018",
+      "day_dir": "Friday-23-02-2018",
+      "finish_time": "11:03",
+      "iso_date": "2018-02-23",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:03",
+      "victim": "18.218.83.150- 172.31.69.28",
+      "victim_ips": [
+        "172.31.69.28",
+        "18.218.83.150"
+      ],
+      "window_id": "ids2018_2018-02-23_1003_14_brute_force_web"
+    },
+    {
+      "attack_family": "WebAttack",
+      "attack_name": "Brute Force -XSS",
+      "attacker": "18.218.115.60",
+      "attacker_ips": [
+        "18.218.115.60"
+      ],
+      "confidence": "official_schedule",
+      "date": "Fri-23-02-2018",
+      "day_dir": "Friday-23-02-2018",
+      "finish_time": "14:10",
+      "iso_date": "2018-02-23",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "13:00",
+      "victim": "18.218.83.150- 172.31.69.28",
+      "victim_ips": [
+        "172.31.69.28",
+        "18.218.83.150"
+      ],
+      "window_id": "ids2018_2018-02-23_1300_15_brute_force_xss"
+    },
+    {
+      "attack_family": "WebAttack",
+      "attack_name": "SQL Injection",
+      "attacker": "18.218.115.60",
+      "attacker_ips": [
+        "18.218.115.60"
+      ],
+      "confidence": "official_schedule",
+      "date": "Fri-23-02-2018",
+      "day_dir": "Friday-23-02-2018",
+      "finish_time": "15:18",
+      "iso_date": "2018-02-23",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "15:05",
+      "victim": "18.218.83.150- 172.31.69.28",
+      "victim_ips": [
+        "172.31.69.28",
+        "18.218.83.150"
+      ],
+      "window_id": "ids2018_2018-02-23_1505_16_sql_injection"
+    },
+    {
+      "attack_family": "Infiltration",
+      "attack_name": "Infiltration",
+      "attacker": "13.58.225.34",
+      "attacker_ips": [
+        "13.58.225.34"
+      ],
+      "confidence": "official_schedule",
+      "date": "Wed-28-02-2018",
+      "day_dir": "Wednesday-28-02-2018",
+      "finish_time": "12:05",
+      "iso_date": "2018-02-28",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:50",
+      "victim": "18.221.148.137-172.31.69.24",
+      "victim_ips": [
+        "172.31.69.24",
+        "18.221.148.137"
+      ],
+      "window_id": "ids2018_2018-02-28_1050_17_infiltration"
+    },
+    {
+      "attack_family": "Infiltration",
+      "attack_name": "Infiltration",
+      "attacker": "13.58.225.34",
+      "attacker_ips": [
+        "13.58.225.34"
+      ],
+      "confidence": "official_schedule",
+      "date": "Wed-28-02-2018",
+      "day_dir": "Wednesday-28-02-2018",
+      "finish_time": "14:40",
+      "iso_date": "2018-02-28",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "13:42",
+      "victim": "18.221.148.137-172.31.69.24",
+      "victim_ips": [
+        "172.31.69.24",
+        "18.221.148.137"
+      ],
+      "window_id": "ids2018_2018-02-28_1342_18_infiltration"
+    },
+    {
+      "attack_family": "Infiltration",
+      "attack_name": "Infiltration",
+      "attacker": "13.58.225.34",
+      "attacker_ips": [
+        "13.58.225.34"
+      ],
+      "confidence": "official_schedule",
+      "date": "Thursday-01-03-2018",
+      "day_dir": "Thursday-01-03-2018",
+      "finish_time": "10:55",
+      "iso_date": "2018-03-01",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "9:57",
+      "victim": "18.216.254.154-172.31.69.13",
+      "victim_ips": [
+        "172.31.69.13",
+        "18.216.254.154"
+      ],
+      "window_id": "ids2018_2018-03-01_957_19_infiltration"
+    },
+    {
+      "attack_family": "Infiltration",
+      "attack_name": "Infiltration",
+      "attacker": "13.58.225.34",
+      "attacker_ips": [
+        "13.58.225.34"
+      ],
+      "confidence": "official_schedule",
+      "date": "Thursday-01-03-2018",
+      "day_dir": "Thursday-01-03-2018",
+      "finish_time": "15:37",
+      "iso_date": "2018-03-01",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "14:00",
+      "victim": "18.216.254.154-172.31.69.13",
+      "victim_ips": [
+        "172.31.69.13",
+        "18.216.254.154"
+      ],
+      "window_id": "ids2018_2018-03-01_1400_20_infiltration"
+    },
+    {
+      "attack_family": "Botnet",
+      "attack_name": "Bot",
+      "attacker": "18.219.211.138",
+      "attacker_ips": [
+        "18.219.211.138"
+      ],
+      "confidence": "official_schedule",
+      "date": "Friday-02-03-2018",
+      "day_dir": "Friday-02-03-2018",
+      "finish_time": "11:34",
+      "iso_date": "2018-03-02",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "10:11",
+      "victim": "18.217.218.111-172.31.69.23 18.222.10.237-172.31.69.17 18.222.86.193-172.31.69.14 18.222.62.221-172.31.69.12 13.59.9.106-172.31.69.10 18.222.102.2-172.31.69.8 18.219.212.0-172.31.69.6 18.216.105.13-172.31.69.26 18.219.163.126-172.31.69.29 18.216.164.12-172.31.69.30",
+      "victim_ips": [
+        "13.59.9.106",
+        "172.31.69.10",
+        "172.31.69.12",
+        "172.31.69.14",
+        "172.31.69.17",
+        "172.31.69.23",
+        "172.31.69.26",
+        "172.31.69.29",
+        "172.31.69.30",
+        "172.31.69.6",
+        "172.31.69.8",
+        "18.216.105.13",
+        "18.216.164.12",
+        "18.217.218.111",
+        "18.219.163.126",
+        "18.219.212.0",
+        "18.222.10.237",
+        "18.222.102.2",
+        "18.222.62.221",
+        "18.222.86.193"
+      ],
+      "window_id": "ids2018_2018-03-02_1011_22_bot"
+    },
+    {
+      "attack_family": "Botnet",
+      "attack_name": "Bot",
+      "attacker": "18.219.211.138",
+      "attacker_ips": [
+        "18.219.211.138"
+      ],
+      "confidence": "official_schedule",
+      "date": "Friday-02-03-2018",
+      "day_dir": "Friday-02-03-2018",
+      "finish_time": "15:55",
+      "iso_date": "2018-03-02",
+      "label_alignment_use_only": true,
+      "source_url": "https://www.unb.ca/cic/datasets/ids-2018.html",
+      "start_time": "14:24",
+      "victim": "18.217.218.111-172.31.69.23 18.222.10.237-172.31.69.17 18.222.86.193-172.31.69.14 18.222.62.221-172.31.69.12 13.59.9.106-172.31.69.10 18.222.102.2-172.31.69.8 18.219.212.0-172.31.69.6 18.216.105.13-172.31.69.26 18.219.163.126-172.31.69.29 18.216.164.12-172.31.69.30",
+      "victim_ips": [
+        "13.59.9.106",
+        "172.31.69.10",
+        "172.31.69.12",
+        "172.31.69.14",
+        "172.31.69.17",
+        "172.31.69.23",
+        "172.31.69.26",
+        "172.31.69.29",
+        "172.31.69.30",
+        "172.31.69.6",
+        "172.31.69.8",
+        "18.216.105.13",
+        "18.216.164.12",
+        "18.217.218.111",
+        "18.219.163.126",
+        "18.219.212.0",
+        "18.222.10.237",
+        "18.222.102.2",
+        "18.222.62.221",
+        "18.222.86.193"
+      ],
+      "window_id": "ids2018_2018-03-02_1424_23_bot"
+    }
+  ]
+}

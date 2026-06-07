@@ -1,0 +1,58 @@
+seed: 42
+model:
+  hidden_size: 128
+  num_layers: 2
+  num_heads: 4
+  intermediate_size: 256
+  dropout: 0.1
+  max_seq_len: 256
+  use_anomaly_features: true
+  use_service_prototype_distance: true
+  use_class_prototype_distance: false
+  anomaly_feature_dim: 16
+  use_stat_fusion: true
+  stat_mlp_dim: 16
+  stat_feature_names:
+    - flow_duration
+    - packet_count
+    - byte_count
+    - token_count
+    - active_token_count
+    - c2s_packet_count
+    - s2c_packet_count
+    - c2s_s2c_packet_ratio
+    - mean_packet_length
+    - std_packet_length
+    - min_packet_length
+    - max_packet_length
+    - iat_mean
+    - iat_std
+    - iat_quantile_25
+    - iat_quantile_50
+    - iat_quantile_75
+    - burst_count
+    - short_flow_flag
+    - same_length_flag
+    - repeat_count
+    - duplicate_count
+    - profile_short_count
+    - profile_same_count
+    - profile_repeat_count
+    - profile_duplicate_count
+
+training:
+  batch_size: 64
+  epochs: 5
+  learning_rate: 0.0005
+  weight_decay: 0.01
+  val_ratio: 0.1
+  test_ratio: 0.2
+  num_workers: 0
+  loss: weighted_ce
+  anomaly_features:
+    score_method: cosine
+    normalize: l2
+    include_special: false
+    use_service_prototype_distance: true
+    use_class_prototype_distance: false
+    anomaly_feature_dim: 16

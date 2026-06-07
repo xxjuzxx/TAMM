@@ -1,0 +1,27 @@
+seed: 42
+model:
+  hidden_size: 128
+  num_layers: 2
+  num_heads: 4
+  intermediate_size: 256
+  dropout: 0.1
+  max_seq_len: 256
+  pooling_strategy: class_aware_attentive
+  class_aware_pooling: true
+  use_app_projection: true
+  app_projection_dim: 128
+
+training:
+  batch_size: 64
+  epochs: 5
+  learning_rate: 0.0005
+  weight_decay: 0.01
+  val_ratio: 0.1
+  test_ratio: 0.2
+  num_workers: 0
+  loss: weighted_ce
+  use_supcon: true
+  supcon_weight: 0.1
+  supcon_temperature: 0.1
+  use_app_proto_reg: false
+  detach_shared_for_aux_loss: false

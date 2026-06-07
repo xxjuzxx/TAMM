@@ -1,0 +1,13 @@
+baselines:
+  benign_only:
+    - flow_statistics_isolation_forest
+    - flow_statistics_lof
+    - flow_statistics_one_class_svm
+    - token_histogram_isolation_forest
+    - token_histogram_lof
+  supervised:
+    - cicflowmeter_random_forest
+    - cicflowmeter_xgboost
+  reporting_policy:
+    - Benign-only and supervised baselines must be reported under separate deployment assumptions.
+    - Supervised baselines use malicious labels and are not direct benign-calibrated comparators.

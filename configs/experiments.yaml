@@ -1,0 +1,27 @@
+seeds: [42, 43, 44]
+heldout_attacks: [Botnet, DDoS, Probe, WebAttack, BruteForce]
+default_mode: quick
+token_corpus:
+  max_len: 512
+  primitive_categories: [profile, structural]
+  train_only_vocab: true
+low_fpr:
+  scorer: knn_cosine
+  k: 3
+  transform: binary_l2
+  deployable_thresholds: [p95, p99, p99_5, p100]
+  calibration_uses_attack_labels: false
+feature_sets:
+  - statistics_only
+  - token_histogram_only
+  - primitive_only
+  - token_plus_primitive
+  - profile_only
+  - structural_only
+  - packet_burst_only
+  - packet_burst_plus_profile_structural
+pipeline:
+  primary_data_source: cicids2017_raw
+  excluded_data_sources:
+    - ${TAMM_DATA_ROOT}/ready/ids2017
+  full_pcap_rerun_is_heavyweight: true

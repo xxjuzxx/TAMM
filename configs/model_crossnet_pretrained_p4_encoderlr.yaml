@@ -1,0 +1,21 @@
+seed: 42
+model:
+  hidden_size: 128
+  num_layers: 2
+  num_heads: 4
+  intermediate_size: 256
+  dropout: 0.1
+  max_seq_len: 256
+  pooling_strategy: class_aware_attentive
+  class_aware_pooling: true
+
+training:
+  batch_size: 64
+  epochs: 5
+  learning_rate: 0.0005
+  encoder_learning_rate: 0.00005
+  weight_decay: 0.01
+  val_ratio: 0.1
+  test_ratio: 0.2
+  num_workers: 0
+  loss: weighted_ce

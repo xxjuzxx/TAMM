@@ -1,0 +1,29 @@
+seed: 42
+
+model:
+  hidden_size: 128
+  num_layers: 2
+  num_heads: 4
+  intermediate_size: 256
+  dropout: 0.1
+  max_seq_len: 256
+  pooling: class_aware_attentive
+  session_group_by: service_host_proto
+  session_window_n: 8
+  session_stride: 1
+  session_min_flows: 2
+  session_min_purity: 0.8
+  session_train_min_purity: 0.8
+  session_eval_min_purity: 0.0
+  session_pooling_strategy: mean
+  session_flow_representation: shared_encode
+
+training:
+  batch_size: 64
+  epochs: 5
+  learning_rate: 0.0005
+  weight_decay: 0.01
+  val_ratio: 0.1
+  test_ratio: 0.2
+  num_workers: 0
+  loss: weighted_ce

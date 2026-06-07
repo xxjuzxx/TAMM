@@ -1,0 +1,34 @@
+seed: 42
+model:
+  hidden_size: 128
+  num_layers: 2
+  num_heads: 4
+  intermediate_size: 256
+  dropout: 0.1
+  max_seq_len: 256
+  pooling_strategy: mean
+
+training:
+  batch_size: 32
+  epochs: 3
+  learning_rate: 0.0005
+  weight_decay: 0.01
+  val_ratio: 0.1
+  test_ratio: 0.2
+  num_workers: 0
+  loss: ce
+
+pretraining:
+  objective: paragraph_contrastive
+  batch_size: 32
+  epochs: 3
+  learning_rate: 0.0005
+  weight_decay: 0.01
+  paragraph_contrastive_weight: 1.0
+  paragraph_contrastive_temperature: 0.2
+  paragraph_sep_token: "[SEP]"
+  min_paragraph_tokens: 4
+  rtd_weight: 0.0
+  contrast_weight: 0.0
+  flow_contrastive_weight: 0.0
+  segment_contrastive_weight: 0.0

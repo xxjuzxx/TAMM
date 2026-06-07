@@ -1,0 +1,6 @@
+calibration:
+  threshold_quantiles: [0.95, 0.99, 0.995, 1.0]
+  validation_sizes: [25, 50, 100, 200, 500, 1000, 2000]
+  deployable_threshold_source: benign_validation_only
+  attack_labels_used_for_deployable_thresholds: false
+

@@ -1,0 +1,49 @@
+seed: 42
+
+flow:
+  min_packets: 1
+  max_packets_per_flow: 512
+
+profile_primitives:
+  short_flow_packet_threshold: 6
+  zero_len_min_repeat: 6
+  normal_min_repeat: 2
+  duplicate_min_repeat: 2
+  max_peer_flows: 128
+  max_packet_profile_primitives: 12
+  max_local_profile_primitives: 8
+  length_bin_max: 15
+  count_bin_max: 15
+
+structural_primitives:
+  # Disabled by default; structural primitives are an explicit primitive category.
+  enabled: false
+  enable_packet_shape_primitives: false
+  enable_burst_shape_primitives: false
+  enable_timing_rhythm_primitives: false
+  enable_direction_transition_primitives: false
+  enable_composite_primitives: false
+  enable_position_aware_primitives: false
+  enable_parameterized_primitives: false
+  min_support: 5
+  max_structural_primitives_per_family: 24
+  small_len_bin_max: 6
+  low_iat_bin_max: 2
+  high_iat_bin_min: 10
+  len_spike_delta: 4
+
+tokenizer:
+  max_len: 256
+  max_packets: 96
+  iat_bin_max: 15
+  length_bin_max: 15
+  count_bin_max: 15
+  burst_iat_threshold_ms: 100
+  use_service_context: false
+  record_service_context: false
+  use_service_tokens: false
+  use_burst_shape_tokens: false
+  profile_mode: full
+  use_transition_profile_tokens: true
+  use_first_k_signature: false
+  first_k: 3

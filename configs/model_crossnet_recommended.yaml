@@ -1,0 +1,47 @@
+seed: 42
+
+model:
+  hidden_size: 128
+  num_layers: 2
+  num_heads: 4
+  intermediate_size: 256
+  dropout: 0.1
+  max_seq_len: 256
+  pooling_strategy: class_aware_attentive
+  class_aware_pooling: true
+
+training:
+  batch_size: 64
+  epochs: 5
+  learning_rate: 0.0005
+  weight_decay: 0.01
+  val_ratio: 0.1
+  test_ratio: 0.2
+  num_workers: 0
+  loss: weighted_ce
+
+evaluation:
+  crossnet_multiflow_aggregation:
+    enabled: true
+    script: scripts/eval_crossnet_rolling_aggregation.py
+    method: mean_softmax
+    mode: centered
+    group_by: service_host_proto
+    window_n: 8
+    temperature: 1.0
+    top_k: 3
+    note: >
+      Recommended offline/delayed CrossNet application-classification evaluation
+      setting. This is post-processing only and does not modify the encoder,
+      tokenizer, checkpoint, or anomaly-detection representation. Centered
+      windows use neighbor flows, so use the causal fallback for zero-latency
+      online evaluation.
+  online_fallback:
+    script: scripts/eval_crossnet_rolling_aggregation.py
+    method: confidence_weighted
+    mode: causal
+    group_by: service_host_proto
+    window_n: 3
+    temperature: 1.0
+  recommended_pretrain_checkpoint: outputs/results/crossnet_longer_pretrain_20260518/pretrain_crossnetB_flow_contrastive_e10/best.pt
+  recommended_finetune_checkpoint: outputs/results/crossnet_longer_pretrain_20260518/finetune_crossnetA_flow_contrastive_e10_seed42/best_model.pt

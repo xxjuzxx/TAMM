@@ -1,0 +1,7 @@
+anomaly:
+  method: train_benign_histogram_prototype
+  train_setting: benign_only
+  threshold_source: val_benign
+  threshold_percentile: 99
+  score_method: cosine
+  normalize: l2
